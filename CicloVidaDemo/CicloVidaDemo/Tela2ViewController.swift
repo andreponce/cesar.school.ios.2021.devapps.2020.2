@@ -9,6 +9,12 @@ import UIKit
 
 class Tela2ViewController: UIViewController {
 
+    // propriedades que mapeam os elementos visuais que desejamos alterar o valor
+    
+    @IBOutlet weak var labelTitulo: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,6 +47,10 @@ class Tela2ViewController: UIViewController {
     }
     
 
+    @IBAction func mudarTitulo(_ sender: Any) {
+        // pegar a referencia do meu outlet e mudar o seu valor
+        labelTitulo.text = "TITULO NOVO TESTE"
+    }
     /*
     // MARK: - Navigation
 
