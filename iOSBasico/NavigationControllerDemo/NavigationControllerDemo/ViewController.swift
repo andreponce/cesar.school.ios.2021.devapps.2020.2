@@ -15,5 +15,10 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func unwindToTela1(_ unwindSegue: UIStoryboardSegue) {
+        
+        print("A tela foi fechada e navegado para a tela 1")
+    }
+    
 }
 

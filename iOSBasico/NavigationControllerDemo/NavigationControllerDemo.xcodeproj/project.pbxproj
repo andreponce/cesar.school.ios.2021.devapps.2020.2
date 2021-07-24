@@ -13,6 +13,7 @@
 		EDF079B726AC46E3007CB1A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDF079B526AC46E3007CB1A7 /* Main.storyboard */; };
 		EDF079B926AC46E4007CB1A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF079B826AC46E4007CB1A7 /* Assets.xcassets */; };
 		EDF079BC26AC46E4007CB1A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDF079BA26AC46E4007CB1A7 /* LaunchScreen.storyboard */; };
+		EDF079C426AC50A6007CB1A7 /* Tela3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF079C326AC50A6007CB1A7 /* Tela3ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		EDF079B826AC46E4007CB1A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDF079BB26AC46E4007CB1A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDF079BD26AC46E4007CB1A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDF079C326AC50A6007CB1A7 /* Tela3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tela3ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				EDF079B826AC46E4007CB1A7 /* Assets.xcassets */,
 				EDF079BA26AC46E4007CB1A7 /* LaunchScreen.storyboard */,
 				EDF079BD26AC46E4007CB1A7 /* Info.plist */,
+				EDF079C326AC50A6007CB1A7 /* Tela3ViewController.swift */,
 			);
 			path = NavigationControllerDemo;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDF079C426AC50A6007CB1A7 /* Tela3ViewController.swift in Sources */,
 				EDF079B426AC46E3007CB1A7 /* ViewController.swift in Sources */,
 				EDF079B026AC46E3007CB1A7 /* AppDelegate.swift in Sources */,
 				EDF079B226AC46E3007CB1A7 /* SceneDelegate.swift in Sources */,

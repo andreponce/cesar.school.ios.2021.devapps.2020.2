@@ -58,23 +58,56 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="04J-a7-uvL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2731.8840579710145" y="113.83928571428571"/>
+            <point key="canvasLocation" x="2723" y="114"/>
         </scene>
         <!--Tela 3-->
         <scene sceneID="Vdg-Zx-44Y">
             <objects>
-                <viewController id="Vfv-bO-zVr" sceneMemberID="viewController">
+                <viewController id="Vfv-bO-zVr" customClass="Tela3ViewController" customModule="NavigationControllerDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FCA-fE-nFr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CkL-Vc-lMK">
+                                <rect key="frame" x="50" y="226" width="47" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Fechar"/>
+                                <connections>
+                                    <action selector="fecharTela:" destination="Vfv-bO-zVr" eventType="touchUpInside" id="YlF-jt-Yre"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fazer uma ação para o botão Fechar voltar para a tela anterior" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjJ-kY-SfA">
+                                <rect key="frame" x="50" y="163" width="344" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fazer uma ação para o botão voltar para a primeira tela" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOM-mK-VJq">
+                                <rect key="frame" x="50" y="281" width="244" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zC2-wD-I2y">
+                                <rect key="frame" x="50" y="350" width="115" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Voltar para tela 1"/>
+                                <connections>
+                                    <segue destination="wDW-hX-BVO" kind="unwind" unwindAction="unwindToTela1:" id="uFH-sd-XIH"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="3RQ-2j-8sb"/>
                         <color key="backgroundColor" systemColor="systemGray3Color"/>
                     </view>
                     <navigationItem key="navigationItem" title="Tela 3" largeTitleDisplayMode="always" id="Nkb-X6-gCd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UDx-aB-hNh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="wDW-hX-BVO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3548" y="136"/>
+            <point key="canvasLocation" x="3476.811594202899" y="113.83928571428571"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ihm-6q-v1H">
@@ -92,7 +125,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q7f-kP-jzQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="109.82142857142857"/>
+            <point key="canvasLocation" x="1191" y="114"/>
         </scene>
     </scenes>
     <resources>
