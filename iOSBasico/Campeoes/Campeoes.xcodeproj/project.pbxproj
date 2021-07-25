@@ -14,6 +14,11 @@
 		EDF079DE26AC5717007CB1A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDF079DC26AC5717007CB1A7 /* LaunchScreen.storyboard */; };
 		EDF079E726AC598F007CB1A7 /* winners.json in Resources */ = {isa = PBXBuildFile; fileRef = EDF079E626AC598F007CB1A7 /* winners.json */; };
 		EDF079EC26AC6190007CB1A7 /* WinnersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF079EB26AC6190007CB1A7 /* WinnersTableViewController.swift */; };
+		EDF079EE26AC798D007CB1A7 /* WorldCupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF079ED26AC798D007CB1A7 /* WorldCupViewController.swift */; };
+		EDF079F026AC7CFF007CB1A7 /* WorldCup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF079EF26AC7CFF007CB1A7 /* WorldCup.swift */; };
+		EDF079F226AC7E42007CB1A7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF079F126AC7E42007CB1A7 /* Game.swift */; };
+		EDF079F426AC7E5E007CB1A7 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF079F326AC7E5E007CB1A7 /* Match.swift */; };
+		EDF079F626AC9388007CB1A7 /* WorldCupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF079F526AC9388007CB1A7 /* WorldCupTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		EDF079DF26AC5717007CB1A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDF079E626AC598F007CB1A7 /* winners.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = winners.json; sourceTree = "<group>"; };
 		EDF079EB26AC6190007CB1A7 /* WinnersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnersTableViewController.swift; sourceTree = "<group>"; };
+		EDF079ED26AC798D007CB1A7 /* WorldCupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldCupViewController.swift; sourceTree = "<group>"; };
+		EDF079EF26AC7CFF007CB1A7 /* WorldCup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldCup.swift; sourceTree = "<group>"; };
+		EDF079F126AC7E42007CB1A7 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		EDF079F326AC7E5E007CB1A7 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		EDF079F526AC9388007CB1A7 /* WorldCupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldCupTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				EDF079EB26AC6190007CB1A7 /* WinnersTableViewController.swift */,
+				EDF079ED26AC798D007CB1A7 /* WorldCupViewController.swift */,
+				EDF079F526AC9388007CB1A7 /* WorldCupTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -98,6 +110,9 @@
 		EDF079EA26AC60C8007CB1A7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EDF079EF26AC7CFF007CB1A7 /* WorldCup.swift */,
+				EDF079F126AC7E42007CB1A7 /* Game.swift */,
+				EDF079F326AC7E5E007CB1A7 /* Match.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -174,8 +189,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDF079EC26AC6190007CB1A7 /* WinnersTableViewController.swift in Sources */,
+				EDF079F626AC9388007CB1A7 /* WorldCupTableViewCell.swift in Sources */,
+				EDF079F226AC7E42007CB1A7 /* Game.swift in Sources */,
 				EDF079D226AC5716007CB1A7 /* AppDelegate.swift in Sources */,
+				EDF079F026AC7CFF007CB1A7 /* WorldCup.swift in Sources */,
+				EDF079EE26AC798D007CB1A7 /* WorldCupViewController.swift in Sources */,
 				EDF079D426AC5716007CB1A7 /* SceneDelegate.swift in Sources */,
+				EDF079F426AC7E5E007CB1A7 /* Match.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

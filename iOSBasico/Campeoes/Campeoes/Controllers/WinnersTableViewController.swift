@@ -9,37 +9,57 @@ import UIKit
 
 class WinnersTableViewController: UITableViewController {
 
+    // lista de itens para ser exibidos na tela da tableview
+    // para facilitar ja inicializamos como uma lista vazia
+    var worldCups: [WorldCup] = []
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        loadWorldCups()
     }
+    
+    
+    func loadWorldCups() {
+        let fileURL = Bundle.main.url(forResource: "winners", withExtension: ".json")!
+        let jsonData = try! Data(contentsOf: fileURL)
+        
+        do {
+            worldCups = try JSONDecoder().decode([WorldCup].self, from: jsonData)
+        } catch  {
+            print(error.localizedDescription)
+        }
+    }
+    
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        // PELO menos devemos ter uma secao para poder exibir algo na tableview.
+        // Opctionalmente vc pode deletar esse método se a sua tela nao tem secoes. (Default é 1)
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        // total de linhas que eu tenho na minha secao unica (no nosso caso só temos uma secao0
+        return worldCups.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        
+        // Obtemos a nossa cell customizada (WorldCupTableViewCell)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! WorldCupTableViewCell
+        let worldCup = worldCups[indexPath.row]
+        
+        // repassamos o objeto atual para o metodo da celula customizada pintar os valores na cell
+        cell.prepare(with: worldCup)
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -76,14 +96,19 @@ class WinnersTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        let vc = segue.destination as! WorldCupViewController
+        let worldCup = worldCups[tableView.indexPathForSelectedRow!.row]
+        vc.worldCup = worldCup
+        
     }
-    */
+    
 
 }
