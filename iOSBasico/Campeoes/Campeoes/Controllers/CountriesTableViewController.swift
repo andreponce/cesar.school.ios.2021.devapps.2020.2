@@ -1,26 +1,22 @@
 //
-//  WinnersTableViewController.swift
+//  CountriesTableViewController.swift
 //  Campeoes
 //
-//  Created by Douglas Frari on 7/24/21.
+//  Created by Douglas Frari on 8/7/21.
 //
 
 import UIKit
 
-class WinnersTableViewController: UITableViewController {
+class CountriesTableViewController: UITableViewController {
 
-    // lista de itens para ser exibidos na tela da tableview
-    // para facilitar ja inicializamos como uma lista vazia
     var worldCups: [WorldCup] = []
-    
-    
+    var worldCupWinners: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         loadWorldCups()
     }
-    
     
     func loadWorldCups() {
         let fileURL = Bundle.main.url(forResource: "winners", withExtension: ".json")!
@@ -29,50 +25,52 @@ class WinnersTableViewController: UITableViewController {
         do {
             worldCups = try JSONDecoder().decode([WorldCup].self, from: jsonData)
             
-//            let indice = 0
-//            for worldCup in worldCups {
-//
-//                if
-//                // considerar apenas uma pais Winner
-//
-//
-//                worldCupsUsingFilter[indice] = worldCup
-//                indice = indice + 1
-//
-//            }
+            for worldCup in worldCups {
+                worldCupWinners.append(worldCup.winner)
+            }
             
-            
+            // usando um algoritmo para remover duplicatas:            
+            worldCupWinners = unique(source: worldCupWinners)
             
         } catch  {
             print(error.localizedDescription)
         }
     }
     
+    // Fonte: https://stackoverflow.com/questions/25738817/removing-duplicate-elements-from-an-array-in-swift
+    func unique<S : Sequence, T : Hashable>(source: S) -> [T] where S.Iterator.Element == T {
+        var buffer = [T]()
+        var added = Set<T>()
+        for elem in source {
+            if !added.contains(elem) {
+                buffer.append(elem)
+                added.insert(elem)
+            }
+        }
+        return buffer
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // PELO menos devemos ter uma secao para poder exibir algo na tableview.
-        // Opctionalmente vc pode deletar esse método se a sua tela nao tem secoes. (Default é 1)
+        
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // total de linhas que eu tenho na minha secao unica (no nosso caso só temos uma secao0
-        return worldCups.count
+        // #warning Incomplete implementation, return the number of rows
+        return worldCupWinners.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+                
+        let worldCupWinner = worldCupWinners[indexPath.row]
         
-        // Obtemos a nossa cell customizada (WorldCupTableViewCell)
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! WorldCupTableViewCell
-        let worldCup = worldCups[indexPath.row]
-        
-        // repassamos o objeto atual para o metodo da celula customizada pintar os valores na cell
-        
-        cell.prepare(with: worldCup)
-        
+        cell.textLabel?.text = worldCupWinner
+        cell.imageView?.image = UIImage(named: worldCupWinner)
+
         return cell
     }
     
@@ -117,13 +115,13 @@ class WinnersTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
         
-        let vc = segue.destination as! WorldCupViewController
+        // objeto selecionado pelo usuario na tabela
         let worldCup = worldCups[tableView.indexPathForSelectedRow!.row]
-        vc.worldCup = worldCup
-        
+                
+        let vc = segue.destination as? CountryDetailViewController
+        vc?.worldCups = worldCups
+        vc?.winner = worldCup.winner
     }
     
 
