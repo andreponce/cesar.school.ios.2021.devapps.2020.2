@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lcz-wJ-eKp">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tela 2-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TabBarControllerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Tela 2" image="folder" catalog="system" id="1SD-pZ-Zhy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="880" y="550"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="9re-bO-REQ">
+            <objects>
+                <viewController id="zSL-1M-x9L" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sPV-iI-yC9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="sqD-1R-rAO"/>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="ig1-7S-Rc6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eVk-DW-EcD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2709" y="358"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="wPB-5d-l3a">
+            <objects>
+                <viewController id="02S-K2-6Rn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KwF-oD-efv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="qVx-0g-0yA"/>
+                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="wzU-rB-qvM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iO3-RU-d6Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2709" y="-248"/>
+        </scene>
+        <!--Tela TabBar-->
+        <scene sceneID="Qyc-yD-GGh">
+            <objects>
+                <tabBarController id="H5N-5L-X4g" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Tela TabBar" image="rectangle.and.pencil.and.ellipsis.rtl" catalog="system" id="uXD-TQ-XIT"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kXr-1k-0hM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="02S-K2-6Rn" kind="relationship" relationship="viewControllers" id="F1h-at-Atm"/>
+                        <segue destination="zSL-1M-x9L" kind="relationship" relationship="viewControllers" id="WNj-Ke-Znv"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gpa-qk-xsn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1822" y="56"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="RnP-C1-NcX">
+            <objects>
+                <tableViewController id="wKi-wu-EkQ" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tPj-eB-AoL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="KSZ-Pg-pI9">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KSZ-Pg-pI9" id="AcE-LX-GDF">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="wKi-wu-EkQ" id="Dmt-WX-sqW"/>
+                            <outlet property="delegate" destination="wKi-wu-EkQ" id="BVC-e9-XKQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="niV-Vm-Hcq"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9uY-nw-7Kb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1717" y="-887"/>
+        </scene>
+        <!--Tela 3-->
+        <scene sceneID="34G-JR-8ch">
+            <objects>
+                <navigationController id="fXN-Yh-7sX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Tela 3" image="trash" catalog="system" id="CgG-TO-YZB"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5t8-yo-2t4">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="wKi-wu-EkQ" kind="relationship" relationship="rootViewController" id="Fo2-bN-1cz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vb8-Ax-JxZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="829" y="-887"/>
+        </scene>
+        <!--Tela 1-->
+        <scene sceneID="bJo-Ce-BMg">
+            <objects>
+                <viewController id="qge-wT-gDe" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hu2-Gd-IvM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="duc-GB-0Bj"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Tela 1" image="pencil.tip" catalog="system" id="Ww1-5F-Mga"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Kh-f3-rTw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="830" y="-196"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="FR8-9G-g7b">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Lcz-wJ-eKp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qI2-eZ-Fok">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="qge-wT-gDe" kind="relationship" relationship="viewControllers" id="qBB-oF-56a"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="m8K-3e-9da"/>
+                        <segue destination="fXN-Yh-7sX" kind="relationship" relationship="viewControllers" id="8py-zN-RRD"/>
+                        <segue destination="H5N-5L-X4g" kind="relationship" relationship="viewControllers" id="V08-Be-LV4"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y0H-yx-y9y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-22" y="-3"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="folder" catalog="system" width="128" height="97"/>
+        <image name="pencil.tip" catalog="system" width="99" height="128"/>
+        <image name="rectangle.and.pencil.and.ellipsis.rtl" catalog="system" width="128" height="92"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
