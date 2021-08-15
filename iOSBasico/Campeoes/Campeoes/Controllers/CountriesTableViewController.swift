@@ -9,8 +9,8 @@ import UIKit
 
 class CountriesTableViewController: UITableViewController {
 
-    var worldCups: [WorldCup] = []
-    var worldCupWinners: [String] = []
+    var wcEnumerated :[String] = []
+    var worldCupWinners: [String:[WorldCup]] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,31 +23,18 @@ class CountriesTableViewController: UITableViewController {
         let jsonData = try! Data(contentsOf: fileURL)
         
         do {
-            worldCups = try JSONDecoder().decode([WorldCup].self, from: jsonData)
+            let worldCups = try JSONDecoder().decode([WorldCup].self, from: jsonData)
             
             for worldCup in worldCups {
-                worldCupWinners.append(worldCup.winner)
+                if((worldCupWinners[worldCup.winner] == nil)) {
+                    worldCupWinners[worldCup.winner] = []
+                    wcEnumerated.append(worldCup.winner)
+                }
+                worldCupWinners[worldCup.winner]!.append(worldCup)
             }
-            
-            // usando um algoritmo para remover duplicatas:            
-            worldCupWinners = unique(source: worldCupWinners)
-            
         } catch  {
             print(error.localizedDescription)
         }
-    }
-    
-    // Fonte: https://stackoverflow.com/questions/25738817/removing-duplicate-elements-from-an-array-in-swift
-    func unique<S : Sequence, T : Hashable>(source: S) -> [T] where S.Iterator.Element == T {
-        var buffer = [T]()
-        var added = Set<T>()
-        for elem in source {
-            if !added.contains(elem) {
-                buffer.append(elem)
-                added.insert(elem)
-            }
-        }
-        return buffer
     }
 
     // MARK: - Table view data source
@@ -59,17 +46,14 @@ class CountriesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return worldCupWinners.count
+        return wcEnumerated.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-                
-        let worldCupWinner = worldCupWinners[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "country", for: indexPath) as! WinnerTableViewCell
         
-        cell.textLabel?.text = worldCupWinner
-        cell.imageView?.image = UIImage(named: worldCupWinner)
+        cell.prepare(countryName: wcEnumerated[indexPath.row])
 
         return cell
     }
@@ -117,11 +101,11 @@ class CountriesTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         // objeto selecionado pelo usuario na tabela
-        let worldCup = worldCups[tableView.indexPathForSelectedRow!.row]
+        let worldCupWinner = wcEnumerated[tableView.indexPathForSelectedRow!.row]
                 
         let vc = segue.destination as? CountryDetailViewController
-        vc?.worldCups = worldCups
-        vc?.winner = worldCup.winner
+        vc?.worldCups = worldCupWinners[worldCupWinner]
+        vc?.winner = worldCupWinner
     }
     
 

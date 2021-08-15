@@ -85,7 +85,7 @@
                                 <color key="textColor" name="Main"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XCE-I4-qCP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XCE-I4-qCP">
                                 <rect key="frame" x="24" y="446.5" width="366" height="44"/>
                                 <color key="backgroundColor" name="Main"/>
                                 <constraints>
@@ -146,6 +146,7 @@
                         <barButtonItem key="backBarButtonItem" title="Gerador de Senhas" id="t1d-LT-rf6"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="generateBt" destination="XCE-I4-qCP" id="Twz-nL-ZjI"/>
                         <outlet property="swCaptitalLetters" destination="hQY-cn-6in" id="E0l-YM-L96"/>
                         <outlet property="swLetters" destination="Pz8-di-HzX" id="AhR-Vb-ggC"/>
                         <outlet property="swNumbers" destination="CyB-bB-SfN" id="Q3S-CE-C5z"/>
@@ -254,7 +255,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <mutableString key="content">1. Escolha senhas faceis de lembrar 
+                                        <string key="content">1. Escolha senhas faceis de lembrar 
 Uma senha facil de guardar na memoria evita que o usuario tenha que anota-la em papeis ou arquivos, que podem chegar as maos de pessoas erradas.
 
 2. Nao use palavras reais 
@@ -282,7 +283,7 @@ Esse procedimento evita possíveis fraudes. Ao abrir links suspeitos, o usuário
 Muitos ataques podem ser evitados ao ativar serviços básicos de proteção na internet dos antivírus.
 
 10.  Se você achar que é difícil lembrar-se de várias senhas complexas, considere a instalação de um gerenciadores de senhas 
-Há diversos programas disponíveis que armazenam os dados de maneira segura e ajudam os mais esquecidos.</mutableString>
+Há diversos programas disponíveis que armazenam os dados de maneira segura e ajudam os mais esquecidos.</string>
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" metaFont="system" size="18"/>

@@ -16,13 +16,49 @@ class ViewController: UIViewController {
     @IBOutlet weak var swNumbers: UISwitch!
     @IBOutlet weak var swSpecialCharacters: UISwitch!
     @IBOutlet weak var swCaptitalLetters: UISwitch!
+    @IBOutlet weak var generateBt: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        self.swLetters.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
+        self.swNumbers.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
+        self.swSpecialCharacters.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
+        self.swCaptitalLetters.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
     }
-
+    
+    @objc func switchChanged(mySwitch: UISwitch) {
+        generateBt.isEnabled = !(!swLetters.isOn && !swNumbers.isOn && !swSpecialCharacters.isOn && !swCaptitalLetters.isOn)
+        generateBt.alpha = generateBt.isEnabled ? 1 : 0.5;
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        let totalPass = Int(tfTotalPasswords.text ?? "0") ?? 0
+        let maxChars = Int(tfNumberOfCharacters.text ?? "0") ?? 0
+        var message = ""
+        
+        if(totalPass==0){
+            message = "A quantidade de senhas deve ser superior a 0";
+        }else if(totalPass > 99){
+            message = "A quantidade de senhas não pode ser superior a 99";
+        }else if(maxChars==0){
+            message = "A quantidade de caracteres deve ser maior que 0";
+        }else if(maxChars > 16){
+            message = "A quantidade máxima de caracters é 16";
+        }
+        
+        if(message != ""){
+            let alert = UIAlertController(title: "Atenção", message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        
+        return true
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12642DD326C8D4C800519E43 /* WinnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12642DD226C8D4C800519E43 /* WinnerTableViewCell.swift */; };
 		ED0771C626BF07F400F555E1 /* CountriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0771C526BF07F400F555E1 /* CountriesTableViewController.swift */; };
 		ED0771C926BF0CC100F555E1 /* CountryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0771C826BF0CC100F555E1 /* CountryDetailViewController.swift */; };
 		EDCDB67D26BDFB29001B2093 /* GamesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCDB67C26BDFB29001B2093 /* GamesTableViewCell.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12642DD226C8D4C800519E43 /* WinnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerTableViewCell.swift; sourceTree = "<group>"; };
 		ED0771C526BF07F400F555E1 /* CountriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesTableViewController.swift; sourceTree = "<group>"; };
 		ED0771C826BF0CC100F555E1 /* CountryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewController.swift; sourceTree = "<group>"; };
 		EDCDB67C26BDFB29001B2093 /* GamesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesTableViewCell.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				EDCDB67C26BDFB29001B2093 /* GamesTableViewCell.swift */,
 				ED0771C526BF07F400F555E1 /* CountriesTableViewController.swift */,
 				ED0771C826BF0CC100F555E1 /* CountryDetailViewController.swift */,
+				12642DD226C8D4C800519E43 /* WinnerTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				ED0771C926BF0CC100F555E1 /* CountryDetailViewController.swift in Sources */,
 				EDF079F226AC7E42007CB1A7 /* Game.swift in Sources */,
 				EDF079D226AC5716007CB1A7 /* AppDelegate.swift in Sources */,
+				12642DD326C8D4C800519E43 /* WinnerTableViewCell.swift in Sources */,
 				EDF079F026AC7CFF007CB1A7 /* WorldCup.swift in Sources */,
 				EDF079EE26AC798D007CB1A7 /* WorldCupViewController.swift in Sources */,
 				EDF079D426AC5716007CB1A7 /* SceneDelegate.swift in Sources */,

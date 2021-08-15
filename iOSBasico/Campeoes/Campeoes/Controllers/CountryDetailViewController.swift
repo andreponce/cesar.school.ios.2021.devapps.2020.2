@@ -9,31 +9,32 @@ import UIKit
 
 class CountryDetailViewController: UIViewController {
 
+    @IBOutlet weak var flagImage: UIImageView!
+    @IBOutlet weak var nameTxt: UILabel!
+    @IBOutlet weak var winCountTxt: UILabel!
+    @IBOutlet weak var achievementsTxt: UILabel!
+    
     var worldCups: [WorldCup]!
     var winner: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
-        print("- O vencedor \(String(describing: winner))")
+        self.flagImage.image = UIImage(named: winner)
+        nameTxt.text = winner;
+        winCountTxt.text = String(worldCups.count)
         
-        var vitoriasAcumuladas = 0
-        var dadosConquistas = ""
-        
+        var achievements = ""
         for worldCup in worldCups {
             
-            // posso logica
-            if winner == worldCup.winner {
-                vitoriasAcumuladas += 1
-                dadosConquistas += "País: \(worldCup.country) - ... \n\n"
-            }
+//            - México, 1986 (Argentina 3 x 2 Alemanha Ocidental)
+//            - Argentina, 1978 (Argentina 3 x 1 Holanda)
+            
+            let final = worldCup.matches.last?.games.last
+            achievements += "- \(worldCup.country), \(worldCup.year) (\(final!.home) \(final!.score) \(final!.away))\n\n"
             
         }
-        
-        print("Vitórias: \(vitoriasAcumuladas)")
-        print("Conquistas: \(dadosConquistas)")
+        achievementsTxt.text = achievements
     }
     
 
