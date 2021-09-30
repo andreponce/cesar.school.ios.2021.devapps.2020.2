@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9eb-2u-Lho">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Carangas-->
+        <scene sceneID="k9p-9K-xAC">
+            <objects>
+                <tableViewController id="HMz-Le-Zf7" customClass="CarsTableViewController" customModule="Carangas" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="03C-qU-HW1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="oFf-o5-vA7">
+                            <rect key="frame" x="0.0" y="99.666667938232422" width="414" height="0.0"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="xxC-Hy-oVh" detailTextLabel="prJ-Ma-C2i" style="IBUITableViewCellStyleValue1" id="TAQ-kV-AHE">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TAQ-kV-AHE" id="0MN-nE-usd">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xxC-Hy-oVh">
+                                            <rect key="frame" x="20" y="11.999999999999998" width="33" height="20.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" name="main"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="prJ-Ma-C2i">
+                                            <rect key="frame" x="350.33333333333331" y="11.999999999999998" width="43.666666666666664" height="20.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="FpI-Sy-Esc" kind="show" identifier="viewSegue" id="bIR-kt-5uk"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="HMz-Le-Zf7" id="5o1-32-VES"/>
+                            <outlet property="delegate" destination="HMz-Le-Zf7" id="5Ah-ey-Bcx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Carangas" id="qEi-1J-Fj0">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" image="Hamburger_icon" id="vfD-FJ-YzE">
+                            <connections>
+                                <segue destination="r36-u4-pu5" kind="show" id="gX6-pu-jP8"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tSI-m7-DTr">
+                            <connections>
+                                <segue destination="grR-Sl-Z0I" kind="show" identifier="addSegue" id="Unn-qu-cRI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ew9-fm-UBQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="23" y="345"/>
+        </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="QrW-Qn-Xni">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="r36-u4-pu5" customClass="SideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ILN-2m-7FJ"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IxM-IA-yky">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="1MB-AU-pMm" kind="relationship" relationship="rootViewController" id="5hF-vo-xbJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gqt-XF-Yux" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1638" y="-368"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="mOZ-f0-i4l">
+            <objects>
+                <viewController id="1MB-AU-pMm" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ckZ-ay-76g">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doF-jf-9lX">
+                                <rect key="frame" x="181" y="104" width="52" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Sobre">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="sjs-uG-gCe" kind="show" id="ZKd-Ok-DFK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdB-jB-j0T">
+                                <rect key="frame" x="171.66666666666666" y="156" width="71" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Contato">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="WNC-Rh-sfz" kind="show" id="RhA-JK-sNh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oEY-dk-v7h"/>
+                        <color key="backgroundColor" name="main"/>
+                        <constraints>
+                            <constraint firstItem="WdB-jB-j0T" firstAttribute="top" secondItem="doF-jf-9lX" secondAttribute="bottom" constant="16" id="Xu6-sU-VDF"/>
+                            <constraint firstItem="doF-jf-9lX" firstAttribute="top" secondItem="oEY-dk-v7h" secondAttribute="top" constant="60" id="blC-AE-OmF"/>
+                            <constraint firstItem="WdB-jB-j0T" firstAttribute="centerX" secondItem="doF-jf-9lX" secondAttribute="centerX" id="uET-Q1-0Pp"/>
+                            <constraint firstItem="doF-jf-9lX" firstAttribute="centerX" secondItem="oEY-dk-v7h" secondAttribute="centerX" id="uo4-I2-caA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Zj0-7b-1mt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oi9-J5-Y7e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-828" y="-368"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MXM-Jb-ar3">
+            <objects>
+                <navigationController id="9eb-2u-Lho" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="mei-gD-9nV"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="ZWz-Se-CsE">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="HMz-Le-Zf7" kind="relationship" relationship="rootViewController" id="8R9-Jv-B6w"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wgz-lH-c5N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-764" y="345"/>
+        </scene>
+        <!--Sobre-->
+        <scene sceneID="Cpk-l0-whK">
+            <objects>
+                <viewController id="sjs-uG-gCe" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7c4-OR-GFj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpM-Dj-uP2">
+                                <rect key="frame" x="16" y="60" width="382" height="317"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="What is Lorem">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="Roboto-Bold"/>
+                                            <font key="NSOriginalFont" size="17" name="Roboto-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">   Ipsum?
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="Roboto-Regular"/>
+                                            <font key="NSOriginalFont" size="17" name="Roboto-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <mutableString key="content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</mutableString>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="Roboto-Regular"/>
+                                            <font key="NSOriginalFont" size="17" name="Roboto-Regular"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="M2A-0E-nIc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fpM-Dj-uP2" firstAttribute="top" secondItem="M2A-0E-nIc" secondAttribute="top" constant="16" id="5UZ-IX-D4z"/>
+                            <constraint firstAttribute="trailing" secondItem="fpM-Dj-uP2" secondAttribute="trailing" constant="16" id="cNh-GG-OOK"/>
+                            <constraint firstItem="fpM-Dj-uP2" firstAttribute="leading" secondItem="M2A-0E-nIc" secondAttribute="leading" constant="16" id="kdA-4h-oJA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sobre" largeTitleDisplayMode="always" id="5e5-P9-yib"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ptu-Ze-hzE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113" y="-1020"/>
+        </scene>
+        <!--Cadastro-->
+        <scene sceneID="qdb-lC-fe7">
+            <objects>
+                <viewController id="grR-Sl-Z0I" customClass="AddEditViewController" customModule="Carangas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NvQ-yN-RgT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Marca" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kLO-Ce-4i7">
+                                <rect key="frame" x="24" y="160" width="366" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="r7r-oC-FUh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="delegate" destination="grR-Sl-Z0I" id="eF9-8y-1Wg"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZfM-q6-B0k">
+                                <rect key="frame" x="24" y="202" width="366" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="TS1-ej-Bkr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="delegate" destination="grR-Sl-Z0I" id="JiR-eR-21z"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Preço" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VWl-TV-lTg">
+                                <rect key="frame" x="24" y="244" width="366" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="JaL-K8-bgm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="grR-Sl-Z0I" id="v8l-7h-JUV"/>
+                                </connections>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yHY-7A-9NC">
+                                <rect key="frame" x="24" y="286" width="366" height="32"/>
+                                <segments>
+                                    <segment title="Flex"/>
+                                    <segment title="Álcool"/>
+                                    <segment title="Gasolina"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQc-3c-Ygb">
+                                <rect key="frame" x="24" y="337" width="366" height="40"/>
+                                <color key="backgroundColor" name="main"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="nBG-Mm-z17"/>
+                                </constraints>
+                                <state key="normal" title="Cadastrar Carro">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addEdit:" destination="grR-Sl-Z0I" eventType="touchUpInside" id="cDe-ym-MiR"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="9xp-a4-tRk">
+                                <rect key="frame" x="188.66666666666666" y="411" width="37" height="37"/>
+                                <color key="color" name="main"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HQe-E1-kia"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HQe-E1-kia" firstAttribute="trailing" secondItem="ZfM-q6-B0k" secondAttribute="trailing" constant="24" id="5zL-MI-okh"/>
+                            <constraint firstItem="ZfM-q6-B0k" firstAttribute="leading" secondItem="HQe-E1-kia" secondAttribute="leading" constant="24" id="6Ir-cC-wYA"/>
+                            <constraint firstItem="HQe-E1-kia" firstAttribute="trailing" secondItem="cQc-3c-Ygb" secondAttribute="trailing" constant="24" id="8UG-j4-kAV"/>
+                            <constraint firstItem="VWl-TV-lTg" firstAttribute="top" secondItem="ZfM-q6-B0k" secondAttribute="bottom" constant="12" id="EcP-nz-NNt"/>
+                            <constraint firstItem="yHY-7A-9NC" firstAttribute="top" secondItem="VWl-TV-lTg" secondAttribute="bottom" constant="12" id="ONM-Fb-z00"/>
+                            <constraint firstItem="9xp-a4-tRk" firstAttribute="top" secondItem="cQc-3c-Ygb" secondAttribute="bottom" constant="34" id="Qq8-TB-mqk"/>
+                            <constraint firstItem="VWl-TV-lTg" firstAttribute="leading" secondItem="HQe-E1-kia" secondAttribute="leading" constant="24" id="T3N-gf-rZD"/>
+                            <constraint firstItem="cQc-3c-Ygb" firstAttribute="top" secondItem="yHY-7A-9NC" secondAttribute="bottom" constant="20" id="Xbz-bb-FRk"/>
+                            <constraint firstItem="kLO-Ce-4i7" firstAttribute="top" secondItem="HQe-E1-kia" secondAttribute="top" constant="20" id="ZzI-lT-gFn"/>
+                            <constraint firstItem="cQc-3c-Ygb" firstAttribute="leading" secondItem="HQe-E1-kia" secondAttribute="leading" constant="24" id="bU8-Gj-S1t"/>
+                            <constraint firstItem="9xp-a4-tRk" firstAttribute="centerX" secondItem="NvQ-yN-RgT" secondAttribute="centerX" id="gvp-L7-Zpv"/>
+                            <constraint firstItem="HQe-E1-kia" firstAttribute="trailing" secondItem="yHY-7A-9NC" secondAttribute="trailing" constant="24" id="hCk-Jg-lpR"/>
+                            <constraint firstItem="HQe-E1-kia" firstAttribute="trailing" secondItem="VWl-TV-lTg" secondAttribute="trailing" constant="24" id="iBF-YI-cEk"/>
+                            <constraint firstItem="yHY-7A-9NC" firstAttribute="leading" secondItem="HQe-E1-kia" secondAttribute="leading" constant="24" id="iDr-PH-ahA"/>
+                            <constraint firstItem="ZfM-q6-B0k" firstAttribute="top" secondItem="kLO-Ce-4i7" secondAttribute="bottom" constant="12" id="q9q-tW-RvA"/>
+                            <constraint firstItem="kLO-Ce-4i7" firstAttribute="leading" secondItem="HQe-E1-kia" secondAttribute="leading" constant="24" id="uuj-qL-doZ"/>
+                            <constraint firstItem="HQe-E1-kia" firstAttribute="trailing" secondItem="kLO-Ce-4i7" secondAttribute="trailing" constant="24" id="w5p-TQ-Ido"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cadastro" largeTitleDisplayMode="always" id="QFB-SZ-ubH"/>
+                    <connections>
+                        <outlet property="btAddEdit" destination="cQc-3c-Ygb" id="mL6-vF-d7b"/>
+                        <outlet property="loading" destination="9xp-a4-tRk" id="RxT-2q-gZO"/>
+                        <outlet property="scGasType" destination="yHY-7A-9NC" id="Cbk-xc-XP9"/>
+                        <outlet property="tfBrand" destination="kLO-Ce-4i7" id="haq-14-KPD"/>
+                        <outlet property="tfName" destination="ZfM-q6-B0k" id="hR0-zS-Sfb"/>
+                        <outlet property="tfPrice" destination="VWl-TV-lTg" id="UYT-Tz-Uf1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="faJ-Xf-PwM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1317" y="-24"/>
+        </scene>
+        <!--Caranga-->
+        <scene sceneID="hLQ-ad-v7b">
+            <objects>
+                <viewController id="FpI-Sy-Esc" customClass="CarViewController" customModule="Carangas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nHr-UH-Z8r">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marca" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0W-xz-8b0">
+                                <rect key="frame" x="24" y="160" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" name="main"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Combustível" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0h-oW-Exb">
+                                <rect key="frame" x="24" y="185" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2w-Q0-H2V">
+                                <rect key="frame" x="24" y="210" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRr-Hn-RIq">
+                                <rect key="frame" x="0.0" y="251" width="414" height="645"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Wr4-32-3XS">
+                                <rect key="frame" x="188.66666666666666" y="555" width="37" height="37"/>
+                                <color key="color" name="main"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hc8-xg-B67"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hc8-xg-B67" firstAttribute="trailing" secondItem="h0W-xz-8b0" secondAttribute="trailing" constant="16" id="9Xd-oH-OSQ"/>
+                            <constraint firstAttribute="bottom" secondItem="bRr-Hn-RIq" secondAttribute="bottom" id="Ae9-Fq-iHu"/>
+                            <constraint firstItem="M2w-Q0-H2V" firstAttribute="leading" secondItem="Hc8-xg-B67" secondAttribute="leading" constant="24" id="CRT-Gh-Xd2"/>
+                            <constraint firstItem="h0W-xz-8b0" firstAttribute="leading" secondItem="Hc8-xg-B67" secondAttribute="leading" constant="24" id="Iiw-0H-U6i"/>
+                            <constraint firstItem="Hc8-xg-B67" firstAttribute="trailing" secondItem="n0h-oW-Exb" secondAttribute="trailing" constant="16" id="NzJ-0E-gpT"/>
+                            <constraint firstItem="bRr-Hn-RIq" firstAttribute="trailing" secondItem="Hc8-xg-B67" secondAttribute="trailing" id="RDw-qx-cSN"/>
+                            <constraint firstItem="bRr-Hn-RIq" firstAttribute="leading" secondItem="Hc8-xg-B67" secondAttribute="leading" id="YT8-u4-YeZ"/>
+                            <constraint firstItem="M2w-Q0-H2V" firstAttribute="top" secondItem="n0h-oW-Exb" secondAttribute="bottom" constant="4" id="Ym4-LP-k9K"/>
+                            <constraint firstItem="Hc8-xg-B67" firstAttribute="trailing" secondItem="M2w-Q0-H2V" secondAttribute="trailing" constant="16" id="bzE-bn-GFn"/>
+                            <constraint firstItem="n0h-oW-Exb" firstAttribute="top" secondItem="h0W-xz-8b0" secondAttribute="bottom" constant="4" id="m9D-Zw-cKa"/>
+                            <constraint firstItem="bRr-Hn-RIq" firstAttribute="top" secondItem="M2w-Q0-H2V" secondAttribute="bottom" constant="20" id="pEY-Gw-uYu"/>
+                            <constraint firstItem="Wr4-32-3XS" firstAttribute="centerY" secondItem="bRr-Hn-RIq" secondAttribute="centerY" id="raV-Yj-qXm"/>
+                            <constraint firstItem="h0W-xz-8b0" firstAttribute="top" secondItem="Hc8-xg-B67" secondAttribute="top" constant="20" id="usU-Xg-Eur"/>
+                            <constraint firstItem="Wr4-32-3XS" firstAttribute="centerX" secondItem="bRr-Hn-RIq" secondAttribute="centerX" id="wUS-8g-YU0"/>
+                            <constraint firstItem="n0h-oW-Exb" firstAttribute="leading" secondItem="Hc8-xg-B67" secondAttribute="leading" constant="24" id="xSR-kp-gCZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Caranga" id="aNu-ZF-NS2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="9Jx-R4-Nab">
+                            <connections>
+                                <segue destination="grR-Sl-Z0I" kind="show" id="kKk-qI-2Ya"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="aivLoading" destination="Wr4-32-3XS" id="PaG-jm-dMM"/>
+                        <outlet property="lbBrand" destination="h0W-xz-8b0" id="kxf-UO-tZ5"/>
+                        <outlet property="lbGasType" destination="n0h-oW-Exb" id="Vf0-jU-vUd"/>
+                        <outlet property="lbPrice" destination="M2w-Q0-H2V" id="8V9-yK-eSK"/>
+                        <outlet property="webView" destination="bRr-Hn-RIq" id="dyP-nr-LaV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KUJ-h6-dXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1292.753623188406" y="686.38392857142856"/>
+        </scene>
+        <!--Contato-->
+        <scene sceneID="SD6-Ly-PeP">
+            <objects>
+                <viewController id="WNC-Rh-sfz" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WQr-Yc-0BH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vV-X4-DMt">
+                                <rect key="frame" x="16" y="60" width="382" height="317"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="What is Lorem">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="Roboto-Bold"/>
+                                            <font key="NSOriginalFont" size="17" name="Roboto-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">   Ipsum?
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="Roboto-Regular"/>
+                                            <font key="NSOriginalFont" size="17" name="Roboto-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="Roboto-Regular"/>
+                                            <font key="NSOriginalFont" size="17" name="Roboto-Regular"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ho0-D3-pBD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ho0-D3-pBD" firstAttribute="trailing" secondItem="5vV-X4-DMt" secondAttribute="trailing" constant="16" id="8GL-Ii-zra"/>
+                            <constraint firstItem="5vV-X4-DMt" firstAttribute="top" secondItem="ho0-D3-pBD" secondAttribute="top" constant="16" id="O9t-Hr-8Q8"/>
+                            <constraint firstItem="5vV-X4-DMt" firstAttribute="leading" secondItem="WQr-Yc-0BH" secondAttribute="leading" constant="16" id="ugm-1y-5Kx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Contato" largeTitleDisplayMode="always" id="XMD-fC-NE2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DnR-BL-OSb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="114" y="-329"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Unn-qu-cRI"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="Hamburger_icon" width="32" height="32"/>
+        <namedColor name="main">
+            <color red="0.20000000298023224" green="0.56499999761581421" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
