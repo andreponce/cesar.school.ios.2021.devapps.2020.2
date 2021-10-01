@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12A23BA627073C6100768BAC /* UIViewController+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A23BA527073C6100768BAC /* UIViewController+Common.swift */; };
 		476079905DA091287A9FB475 /* Pods_Carangas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253C273411D2A30CF9028A7F /* Pods_Carangas.framework */; };
 		A1B18D051F9C1BDD00313110 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B18D041F9C1BDD00313110 /* AppDelegate.swift */; };
 		A1B18D0A1F9C1BDD00313110 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1B18D081F9C1BDD00313110 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		0678FBC847153CE43695C873 /* Pods-Carangas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carangas.debug.xcconfig"; path = "Target Support Files/Pods-Carangas/Pods-Carangas.debug.xcconfig"; sourceTree = "<group>"; };
+		12A23BA527073C6100768BAC /* UIViewController+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Common.swift"; sourceTree = "<group>"; };
 		253C273411D2A30CF9028A7F /* Pods_Carangas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Carangas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B18D011F9C1BDD00313110 /* Carangas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carangas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B18D041F9C1BDD00313110 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12A23BA427073BDF00768BAC /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				12A23BA527073C6100768BAC /* UIViewController+Common.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
 		30006D3086C0C69B33C8ED31 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +98,7 @@
 		A1B18D031F9C1BDD00313110 /* Carangas */ = {
 			isa = PBXGroup;
 			children = (
+				12A23BA427073BDF00768BAC /* extension */,
 				A1B18D041F9C1BDD00313110 /* AppDelegate.swift */,
 				ED64475626E2DD4800CC19C5 /* Models */,
 				ED64475426E2DC4E00CC19C5 /* Views */,
@@ -247,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1B18D171F9C1D7E00313110 /* CarsTableViewController.swift in Sources */,
+				12A23BA627073C6100768BAC /* UIViewController+Common.swift in Sources */,
 				ED64475826E2DD8C00CC19C5 /* REST.swift in Sources */,
 				A1B18D051F9C1BDD00313110 /* AppDelegate.swift in Sources */,
 				ED64475026E2DB8D00CC19C5 /* Car.swift in Sources */,

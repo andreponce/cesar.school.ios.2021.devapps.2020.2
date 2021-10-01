@@ -204,26 +204,26 @@ class REST {
     
     
     // retorno verdade se foi possivel salvar, false caso contrario
-    static func save(car: Car, onComplete: @escaping (Bool) -> Void ) {
+    static func save(car: Car, onComplete: @escaping (Bool) -> Void, onError: @escaping (CarError) -> Void ) {
         print("save")
-        applyOperation(car: car, operation: .save, onComplete: onComplete)
+        applyOperation(car: car, operation: .save, onComplete: onComplete, onError: onError)
     }
     
     // retorno verdade se foi possivel salvar, false caso contrario
-    static func update(car: Car, onComplete: @escaping (Bool) -> Void ) {
+    static func update(car: Car, onComplete: @escaping (Bool) -> Void, onError: @escaping (CarError) -> Void ) {
         print("update")
-        applyOperation(car: car, operation: .update, onComplete: onComplete)
+        applyOperation(car: car, operation: .update, onComplete: onComplete, onError: onError)
     }
     
-    static func delete(car: Car, onComplete: @escaping (Bool) -> Void ) {
+    static func delete(car: Car, onComplete: @escaping (Bool) -> Void, onError: @escaping (CarError) -> Void ) {
         print("delete")
-        applyOperation(car: car, operation: .delete, onComplete: onComplete)
+        applyOperation(car: car, operation: .delete, onComplete: onComplete, onError: onError)
     }
     
     
-    private static func applyOperation(car: Car, operation: RESTOperation , onComplete: @escaping (Bool) -> Void ) {
+    private static func applyOperation(car: Car, operation: RESTOperation , onComplete: @escaping (Bool) -> Void, onError: @escaping (CarError) -> Void ) {
         
-        guard let json = try? JSONEncoder().encode(car) as? [String: Any] else {
+        /*guard let json = try? JSONEncoder().encode(car) as? [String: Any] else {
             print("erro json encode")
             onComplete(false)
             return
@@ -260,6 +260,46 @@ class REST {
                 case .failure:
                     onComplete(false)
                     print("failure", response.error, response.response?.statusCode)
+            }
+        }*/
+        
+        
+        let urlString = basePath + "/" + (car._id ?? "")
+
+        guard let url = URL(string: urlString) else {
+            onComplete(false)
+            return
+        }
+
+        var request = URLRequest(url: url)
+
+        switch operation {
+        case .delete:
+            request.httpMethod = HTTPMethod.delete.rawValue
+        case .save:
+            request.httpMethod = HTTPMethod.post.rawValue
+        case .update:
+            request.httpMethod = HTTPMethod.put.rawValue
+        }
+
+        // transformar objeto para um JSON, processo contrario do decoder -> Encoder
+        guard let json = try? JSONEncoder().encode(car) else {
+            onComplete(false)
+            return
+        }
+
+        request.httpBody = json
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        AF.request(request).validate().responseJSON{ response in
+            guard let responseFinal = response.response else {
+                onError(.noResponse)
+                return
+            }
+            
+            if responseFinal.statusCode == 200 {
+                onComplete(true)
+            }else{
+                onError(.responseStatusCode(code: response.response!.statusCode))
             }
         }
         

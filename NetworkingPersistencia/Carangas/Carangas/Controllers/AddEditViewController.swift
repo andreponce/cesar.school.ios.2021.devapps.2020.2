@@ -155,6 +155,8 @@ class AddEditViewController: UIViewController {
                     self.showAlert(withTitle: "Adicionar", withMessage: "Não foi possivel salvar o carro!", isTryAgain: true, operation: .add_car)
                 }
             }
+        } onError: { error in
+            self.showError(error: error)
         }
     }
     
@@ -172,6 +174,8 @@ class AddEditViewController: UIViewController {
                     self.showAlert(withTitle: "Editar", withMessage: "Não foi possível Editar o carro!", isTryAgain: true, operation: .edit_car)
                 }
             }
+        }onError: { error in
+            self.showError(error: error)
         }
     }
     

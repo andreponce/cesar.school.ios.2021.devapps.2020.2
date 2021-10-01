@@ -140,6 +140,8 @@ class CarsTableViewController: UITableViewController {
                 } else {
                     print("Não foi possível deletar do servidor esse carro.")
                 }
+            }onError: { error in
+                self.showError(error: error)
             }
         }
     }
